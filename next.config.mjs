@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+// Ortam değişkenlerini manuel olarak ayarla
+process.env.DATABASE_URL = process.env.DATABASE_URL || 'file:./dev.db';
+process.env.NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET || 'livkors-secret-key-2024-production';
+process.env.NEXTAUTH_URL = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+
 const nextConfig = {
   output: 'standalone',  // Vercel için optimize edilmiş build
   serverExternalPackages: ['@prisma/client', 'bcryptjs'],
